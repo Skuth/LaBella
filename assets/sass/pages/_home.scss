@@ -1,0 +1,167 @@
+.offers {
+    width: 90%;
+    max-width: 1728px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .offerBox {
+        width: calc(100% / 2 - 20px * 2);
+        margin: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 4px;
+        overflow: hidden;
+        max-height: 300px;
+        &:nth-child(1) {
+            background: $bl2;
+        }
+        &:nth-child(2) {
+            background: $pk;
+        }
+        .offerText {
+            width: calc(50% - 20px * 2);
+            text-align: left;
+            padding: 20px;
+            p {
+                font-size: 30px;
+                color: $w1;
+            }
+            a {
+                display: block;
+                margin-top: 80px;
+                text-decoration: none;
+                text-align: center;
+                background: $w1;
+                padding: 15px;
+                border-radius: 30px;
+                color: $b1;
+                font-size: 20px;
+                width: 80%;
+                @include transition(all .3s);
+                &:hover {
+                    @include boxShadow(5px 5px 10px $ba);
+                }
+            }
+        }
+        .offerImg {
+            width: 50%;
+            .imgBox {
+                display: block;
+                width: 100%;
+                height: 100vh;
+                max-height: 300px;
+                background: var(--main-bg-img) no-repeat center center;
+                background-size: cover;
+                background-position-y: bottom;
+            }
+        }
+    }
+}
+
+.news {
+    width: 90%;
+    padding: 20px;
+    max-width: 1728px;
+    margin: 0 auto;
+    .text {
+        display: block;
+        text-align: center;
+        padding: 40px 0;
+        h2 {
+            text-align: center;
+            font-size: 40px;
+            display: inline-block;
+            padding: 20px;
+            position: relative;
+            color: $b3;
+            &:before {
+                content: '';
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                border-radius: 4px;
+                position: absolute;
+                background: $pk;
+                @include boxShadow(0 0 10px $pk);
+            }
+        }
+    }
+    .button {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+.instagram {
+    padding: 20px;
+    background: $b1;
+    .text {
+        padding-top: 20px;
+        display: block;
+        text-align: center;
+        h3 {
+            font-size: 40px;
+            padding: 10px;
+            color: $w2;
+        }
+        p {
+            font-size: 24px;
+            color: $w1;
+        }
+    }
+
+    .pictureContainer {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 40px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        a {
+            flex: 0 0 calc(100% / 5 - 10px * 2);
+            margin: 10px;
+        }
+        .box {
+            width: 100%;
+            position: relative;
+            @include transition(all 1s, cubic-bezier(0.65, 0.05, 0.36, 1));
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: $ba;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                color: $w1;
+                font-size: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                @include textShadow(0 0 10px $b1);
+                @include transition(all .5s);                
+            }
+            &:hover {
+                &:before {
+                    opacity: 1;
+                }
+            }
+            img {
+                width: 100%;
+                display: block;
+                border-radius: 4px;
+            }
+        }
+    }
+    .button {
+        padding-top: 80px;
+    }
+}

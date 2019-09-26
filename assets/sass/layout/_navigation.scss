@@ -1,0 +1,108 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: calc(100% - 20px * 2);
+    z-index: 10;
+    position: relative;
+    @include gradient(0, transparent, $b1);
+    background: $b1;
+    @include boxShadow(0 0 20px $ba);
+    .navStart {
+        h1 {
+            display: inline-block;
+            a {
+                display: block;
+                padding: 20px;
+                text-decoration: none;
+                font-size: 28px;
+                color: $pk;
+            }
+        }
+        ul {
+            margin: 0 10px;
+        }
+    }
+    .navEnd {
+        ul {
+            .icon {
+                border-radius: 50%;
+                width: calc(50px - 20px * 2);
+                height: calc(50px - 20px * 2);
+                border: 2px solid $w1;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                &:hover {
+                    background: $w1;
+                    color: $b1;
+                    @include boxShadow(0 0 10px $w1);
+                }
+            }
+            .cart {
+                position: relative;
+                .badge {
+                    position: absolute;
+                    background: $rd;
+                    padding: 5px 9px;
+                    border-radius: 30px;
+                    margin: 0 auto;
+                    color: $w1;
+                    bottom: -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: 14px;
+                }
+            }
+            li {
+                a {
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .nav {
+        ul {
+            display: inline-block;
+            li {
+                display: inline-block;
+                a {
+                    display: block;
+                    text-decoration: none;
+                    padding: 20px;
+                    color: $w1;
+                    font-size: 16px;
+                    position: relative;
+                    margin: 0 5px;
+                    @include transition(all .5s);
+                    @include textShadow(0 0 10px $ba);
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        width: 0;
+                        margin: 0 auto;
+                        height: 2px;
+                        background: $w1;
+                        border-radius: 4px;
+                        @include transition(all 1s, cubic-bezier(0.65, 0.05, 0.36, 1));
+                        @include boxShadow(0 0 10px $w1);
+                    }
+                    &:hover {
+                        @include textShadow(0 0 10px $w1);
+                        &:before {
+                            width: 90%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

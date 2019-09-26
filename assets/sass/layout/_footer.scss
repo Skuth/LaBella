@@ -1,0 +1,64 @@
+.footer {
+    padding-top: 40px;
+    background: $b2;
+    .footerBox {
+        width: 90%;
+        margin: 0 auto;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        color: $w1;
+        flex-wrap: wrap;
+        .infoBox {
+            flex: 0 0 calc(100% / 3);
+        }
+        .laBella {
+            .logo {
+                font-size: 34px;
+                color: $pk;
+            }
+            .text {
+                margin-top: 10px;
+            }
+        }
+        .social {
+            text-align: center;
+            .box {
+                padding: 10px;
+                text-align: center;
+                a {
+                    display: inline-block;
+                    margin: 5px;
+                    font-size: 24px;
+                    color: $w1;
+                    @include transition(all .5s);
+                    &:hover {
+                        @include textShadow(0 0 10px $w2);
+                        color: $w2;
+                    }
+                }
+            }
+        }
+        .map {
+            display: block;
+            text-align: center;
+        }
+        .title {
+            font-size: 22px;
+            display: block;
+        }
+    }
+    .footerBottom {
+        display: block;
+        background: $b1;
+        padding: 20px;
+        text-align: center;
+        p {
+            color: $w1;
+            span {
+                color: $pk;
+            }
+        }
+    }
+}

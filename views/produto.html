@@ -1,0 +1,58 @@
+<section class="productsList">
+    <div class="productInfo">
+        <div class="productPictures">
+            
+            <div class="productSlide">
+                <img src="{$produto.img}">
+            </div>
+            
+            <div class="productImg">
+                <img src="{$produto.img}">
+            </div>
+            
+        </div>
+        
+        <div class="productDesc">
+            
+            <h2 class="title">{$produto.nome}</h2>
+            
+            <h3 class="price">R$ <span>{$produto.valor}</span></h3>
+            
+            <!-- <div class="productSizes">
+                {loop="$produto.tamanhos"}
+                <p>{$value}</p>
+                {/loop}
+            </div> -->
+            
+            <p style="padding: 30px; color: red;">No momento vendas apenas por Whatsapp</p>
+            
+            <div class="button">
+                <a href="https://api.whatsapp.com/send?phone=5522996014887&text=Estava no site e me interessei pelo '{$produto.nome}'" target="_blank">Comprar</a>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="productsTip">
+        <div class="products">
+            
+            {loop="$produtos"}
+            <div class="productBox">
+                <a href="/produto/{function="name($value.nome)"}/{$key}">
+                    <div class="boxImg">
+                        <img src="{$value.img}" alt="">
+                    </div>
+                    <div class="boxInfo">
+                        <p class="tag">{$value.marca}</p>
+                        <p class="title">{$value.nome}</p>
+                        <p class="price">R$ <span>{$value.valor}</span></p>
+                    </div>
+                </a>
+            </div>
+            {/loop}
+            
+        </div>
+    </div>
+</div>
+
+</section>

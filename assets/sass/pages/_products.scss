@@ -1,0 +1,60 @@
+.productsList {
+    .filters {
+        background: $b2;
+        padding: 40px;
+        color: $w1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        margin-bottom: 40px;
+        @include transition(all .3s);
+        .active {
+            background: $b3;
+            @include textShadow(0 0 15px $w1);
+        }
+        > li {
+            cursor: pointer;
+            display: block;
+            padding: 20px 30px;
+            border-radius: 4px;
+            position: relative;
+            @include select();
+            @include transition(all .3s);
+            &:hover {
+                background: $b3;
+                @include textShadow(0 0 15px $w1);
+            }
+            ul {
+                margin-top: 20px;
+                display: none;
+                background: $b3;
+                position: absolute;
+                top: 45px;
+                z-index: 20;
+                left: 0;
+                right: 0;
+                border-radius: 4px;
+                overflow: hidden;
+                @include boxShadow(0 0 15px $ba);
+                li {
+                    display: block;
+                    margin-top: 5px;
+                    a {
+                        display: block;
+                        text-decoration: none;
+                        color: $w1;
+                        padding: 15px;
+                        text-align: center;
+                        margin-top: -5px;
+                        @include transition(all .3s);
+                        @include textShadow(0 0 0 transparent);
+                        &:hover {
+                            background: lighten($b3, 10%);
+                            @include textShadow(0 0 15px $w1);
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}

@@ -1,0 +1,96 @@
+<header class="header">
+    <div class="imgBox">
+        <img src="https://bit.ly/2lMa5Fu" alt="">
+    </div>
+</header>
+
+<section class="offers">
+    <div class="offerBox">
+        <div class="offerText">
+            <p>Moda Feminina</p>
+            <a href="/produtos/feminino">Ver mais</a>
+        </div>
+        <div class="offerImg">
+            <div class="imgBox" style="--main-bg-img: url(https://bit.ly/2kiql0z)"></div>
+        </div>
+    </div>
+    
+    <div class="offerBox">
+        <div class="offerText">
+            <p>Sapatos Femininos</p>
+            <a href="/produtos/sapatos">Ver mais</a>
+        </div>
+        <div class="offerImg">
+            <div class="imgBox" style="--main-bg-img: url(https://bit.ly/2mcIv4h)"></div>
+        </div>
+    </div>
+</section>
+
+<section class="news">
+    
+    <div class="text">
+        <h2>Novidades</h2>
+    </div>
+    
+    <div class="products">
+
+        {loop="$produtos"}
+        <div class="productBox">
+            <a href="/produto/{function="name($value.nome)"}/{$key}">
+                <div class="boxImg">
+                    <img src="{$value.img}" alt="">
+                </div>
+                <div class="boxInfo">
+                    <p class="tag">{$value.marca}</p>
+                    <p class="title">{$value.nome}</p>
+                    <p class="price">R$ <span>{$value.valor}</span></p>
+                </div>
+            </a>
+        </div>
+        {/loop}
+        
+    </div>
+    
+    <div class="button">
+        <a href="/produtos" class="pk">Ver mais</a>
+    </div>
+</section>
+
+<section class="instagram">
+    <div class="text">
+        <h3>Instagram</h3>
+        <p>@la.bella.cf</p>
+    </div>
+    
+    <div class="pictureContainer">
+        <a href="#" target="_blanked">
+            <div class="box">
+                <img src="https://bit.ly/2kyQ3y4" alt="">
+            </div>
+        </a>
+        <a href="#" target="_blanked">
+            <div class="box">
+                <img src="https://bit.ly/2kyQ3y4" alt="">
+            </div>
+        </a>
+        <a href="#" target="_blanked">
+            <div class="box">
+                <img src="https://bit.ly/2kyQ3y4" alt="">
+            </div>
+        </a>
+        <a href="#" target="_blanked">
+            <div class="box">
+                <img src="https://bit.ly/2kyQ3y4" alt="">
+            </div>
+        </a>
+        <a href="#" target="_blanked">
+            <div class="box">
+                <img src="https://bit.ly/2kyQ3y4" alt="">
+            </div>
+        </a>
+    </div>
+    
+    <div class="button">
+        <a href="https://www.instagram.com/la.bella.cf/" class="pk" target="_blanked">Ver mais</a>
+    </div>
+</section>

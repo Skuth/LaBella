@@ -1,0 +1,29 @@
+.button {
+    padding: 20px;
+    text-align: center;
+    display: block;
+    a {
+        text-decoration: none;
+        padding: 15px 40px;
+        border-radius: 30px;
+        background: $b1;
+        color: $w2;
+        font-size: 22px;
+        display: inline-block;
+        @include select();
+        @include boxShadow(0 0 10px rgba(0,0,0,0.2));
+        @include transition(all .3s);
+        &:hover {
+            background: lighten($b1, 5%);
+            @include textShadow(0 0 10px $w2);
+            @include boxShadow(5px 5px 10px $ba);
+        }
+    }
+
+    .pk {
+        background: $pk!important;
+        &:hover {
+            background: lighten($pk, 5%)!important;
+        }  
+    }
+}

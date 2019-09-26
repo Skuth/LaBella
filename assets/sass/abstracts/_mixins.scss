@@ -1,0 +1,29 @@
+@mixin gradient($position, $color1, $color2) {
+    background: -moz-linear-gradient($position, $color1 0%, $color2 100%);
+    background: -webkit-linear-gradient($position, $color1 0%, $color2 100%);
+    background: linear-gradient($position, $color1 0%, $color2 100%);
+}
+
+@mixin transition($time, $type: linear) {
+    -moz-transition: $time $type;
+    -webkit-transition: $time $type;
+    transition: $time $type;
+}
+
+@mixin textShadow($params) {
+    -moz-text-shadow: $params;
+    -webkit-text-shadow: $params;
+    text-shadow: $params;
+}
+
+@mixin boxShadow($params) {
+    -moz-box-shadow: $params;
+    -webkit-box-shadow: $params;
+    box-shadow: $params;
+}
+
+@mixin select() {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}

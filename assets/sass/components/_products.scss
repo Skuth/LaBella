@@ -1,0 +1,52 @@
+.products {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    .productBox {
+        flex: 0 0 calc(100% / 4 - 20px * 2);
+        margin: 20px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+        @include boxShadow(0 0 10px rgba(0,0,0,0.1));
+        @include transition(all .3s);
+        &:hover {
+            @include boxShadow(0 0 20px $ba);
+        }
+        .boxImg {
+            display: block;
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+        .boxInfo {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: calc(100% - 20px * 2);
+            padding: 40px 20px;
+            color: $w2;
+            @include gradient(0, rgba(0,0,0,0.6), transparent);
+            .tag {
+                background: $pk;
+                padding: 10px 20px;
+                border-radius: 30px;
+                display: inline-block;
+                font-size: 16px;
+                @include boxShadow(0 0 10px $ba);
+                @include textShadow(0 0 10px $w1);
+            }
+            .price {
+                font-size: 24px;
+            }
+            p {
+                margin-top: 10px;
+                font-size: 22px;
+                cursor: pointer;
+                @include textShadow(0 0 10px $b1);
+            }
+        }
+    };
+}
