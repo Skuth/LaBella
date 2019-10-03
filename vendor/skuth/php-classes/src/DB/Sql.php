@@ -4,16 +4,16 @@ namespace Skuth\DB;
 
 class Sql {
 
-    const HOST = "";
-    const DB = "";
-    const USER = "";
+    const HOST = "localhost";
+    const DB = "la_bella";
+    const USER = "root";
     const PASS = "";
     
     private $conn;
 
     public function __construct()
     {
-        $this->conn = new \PDO("mysql:host=".self::HOST.";dbname=".self::DB, self::USER, self::PASS, [\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8"]);
+        $this->conn = new \PDO("mysql:host=".self::HOST.";dbname=".self::DB, self::USER, self::PASS);
     }
 
     public function setParams($stmt, $params = [])

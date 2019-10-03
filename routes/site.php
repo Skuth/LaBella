@@ -1,6 +1,10 @@
 <?php
 
 use Skuth\Page;
+use Skuth\Model\Produtos;
+use Skuth\Model\Banner;
+use Skuth\Model\Categoria;
+use Skuth\Model\Marca;
 
 
 function name($name) {
@@ -10,71 +14,49 @@ function name($name) {
 }
 
 $app->get("/", function($req, $res, $args) {
-    
-    $produtos = [];
-    
-    $produto = [
-        "img"=>"https://bit.ly/2lRSfRe",
-        "marca"=>"Moda pop",
-        "tipo"=>"feminino",
-        "nome"=>"Blusa Detalhe Tule Preto",
-        "valor"=>"99,00"
-    ];
-    
-    array_push($produtos, $produto);
-    array_push($produtos, $produto);
-    array_push($produtos, $produto);
-    array_push($produtos, $produto);
+ 
+    $produtos = new Produtos();
+    $listaProdutos = $produtos->listAll();
+
+    $banner = Banner::getActiveBanner()[0];
     
     $page = new Page();
-    
-    $page->setTpl("home", ["produtos"=>$produtos]);
+    $page->setTpl("home", ["produtos"=>$listaProdutos, "banner"=>$banner]);
     
 });
 
 $app->get("/produto/{name}/{id}", function($req, $res, $args) {
     
-    $produtos = [];
-    
-    $prod = [
-        "img"=>"https://bit.ly/2lRSfRe",
-        "marca"=>"Moda pop",
-        "tipo"=>"feminino",
-        "nome"=>"Blusa Detalhe Tule Preto",
-        "valor"=>"99,00"
-    ];
-    
-    array_push($produtos, $prod);
-    array_push($produtos, $prod);
-    array_push($produtos, $prod);
-    array_push($produtos, $prod);
-    
-    $produto = [
-        "img"=>"https://bit.ly/2lRSfRe",
-        "marca"=>"Moda pop",
-        "tipo"=>"feminino",
-        "nome"=>"Blusa Detalhe Tule Preto",
-        "valor"=>"99,00",
-        "tamanhos"=>[]
-    ];
-    
-    array_push($produto["tamanhos"], 34);
-    array_push($produto["tamanhos"], 36);
-    array_push($produto["tamanhos"], 38);
-    array_push($produto["tamanhos"], 40);
-    array_push($produto["tamanhos"], 42);
+    $produtos = new Produtos();
+    $listaProdutos = $produtos->listAll();
+    $produto = $produtos->listById($args["id"])[0];
     
     $page = new Page(["data"=>["produto"=>$produto]]);
-    
-    $page->setTpl("produto", ["produto"=>$produto, "produtos"=>$produtos]);
+    $page->setTpl("produto", ["produto"=>$produto, "produtos"=>$listaProdutos]);
     
 });
 
-$app->get("/produtos/{tipo}", function($req, $res, $args) {
+$app->get("/produtos[/{tipo}[/{marca}]]", function($req, $res, $args) {
+
+    $categoria = Categoria::listAll();
+    $marca = Marca::listAll();
+    $produtos = new Produtos();
+      if (isset($args["tipo"])) {
+        if($args["tipo"] !== "marca") {
+            $listaProdutos = $produtos->listByFilter($args["tipo"]);
+        } else {
+            $m = $args["marca"];
+            $m = str_replace("-", " ", $m);
+            $m = ucfirst($m);
+
+            $listaProdutos = $produtos->listByMarca($m);
+        }
+    } else {
+        $listaProdutos = $produtos->listAll();
+    }
     
     $page = new Page();
-    
-    $page->setTpl("produtos");
+    $page->setTpl("produtos", ["produtos"=>$listaProdutos, "categoria"=>$categoria, "marca"=>$marca]);
     
 });
 

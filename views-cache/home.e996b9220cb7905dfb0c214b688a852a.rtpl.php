@@ -1,6 +1,6 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><header class="header">
     <div class="imgBox">
-        <img src="https://bit.ly/2lMa5Fu" alt="">
+        <img src="<?php echo htmlspecialchars( $banner["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="">
     </div>
 </header>
 
@@ -36,7 +36,7 @@
 
         <?php $counter1=-1;  if( isset($produtos) && ( is_array($produtos) || $produtos instanceof Traversable ) && sizeof($produtos) ) foreach( $produtos as $key1 => $value1 ){ $counter1++; ?>
         <div class="productBox">
-            <a href="/produto/<?php echo name($value1["nome"]); ?>/<?php echo htmlspecialchars( $key1, ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+            <a href="/produto/<?php echo name($value1["nome"]); ?>/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 <div class="boxImg">
                     <img src="<?php echo htmlspecialchars( $value1["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="">
                 </div>

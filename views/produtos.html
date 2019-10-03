@@ -3,21 +3,17 @@
         <li>
             CATEGORIA
             <ul>
-                <li><a href="#">Teste</a></li>
-                <li><a href="#">Teste</a></li>
-                <li><a href="#">Teste</a></li>
-                <li><a href="#">Teste</a></li>
-                <li><a href="#">Teste</a></li>
+                {loop="$categoria"}
+                <li><a href="/produtos/{$value.categoria}">{function="ucfirst($value.categoria)"}</a></li>
+                {/loop}
             </ul>
         </li>
         <li>
             MARCA
             <ul>
-                <li><a href="#">Teste</a></li>
-                <li><a href="#">Teste</a></li>
-                <li><a href="#">Teste</a></li>
-                <li><a href="#">Teste</a></li>
-                <li><a href="#">Teste</a></li>
+                {loop="$marca"}
+                <li><a href="/produtos/marca/{function="name($value.marca)"}">{function="ucfirst($value.marca)"}</a></li>
+                {/loop}
             </ul>
         </li>
         <li>
@@ -30,109 +26,21 @@
     </div>
     
     <div class="products">
-        <div class="productBox">
-            <a href="#">
-                <div class="boxImg">
-                    <img src="https://bit.ly/2lRSfRe" alt="">
-                </div>
-                <div class="boxInfo">
-                    <p class="tag">Camisa</p>
-                    <p class="title">Camisa feminina</p>
-                    <p class="price">R$ <span>99,00</span></p>
-                </div>
-            </a>
-        </div>
         
+        {loop="$produtos"}
         <div class="productBox">
-            <a href="#">
+            <a href="/produto/{function="name($value.nome)"}/{$value.id}">
                 <div class="boxImg">
-                    <img src="https://bit.ly/2lRSfRe" alt="">
+                    <img src="{$value.img}" alt="">
                 </div>
                 <div class="boxInfo">
-                    <p class="tag">Camisa</p>
-                    <p class="title">Camisa feminina</p>
-                    <p class="price">R$ <span>99,00</span></p>
+                    <p class="tag">{$value.marca}</p>
+                    <p class="title">{$value.nome}</p>
+                    <p class="price">R$ <span>{$value.valor}</span></p>
                 </div>
             </a>
         </div>
-        
-        <div class="productBox">
-            <a href="#">
-                <div class="boxImg">
-                    <img src="https://bit.ly/2lRSfRe" alt="">
-                </div>
-                <div class="boxInfo">
-                    <p class="tag">Camisa</p>
-                    <p class="title">Camisa feminina</p>
-                    <p class="price">R$ <span>99,00</span></p>
-                </div>
-            </a>
-        </div>
-        
-        <div class="productBox">
-            <a href="#">
-                <div class="boxImg">
-                    <img src="https://bit.ly/2lRSfRe" alt="">
-                </div>
-                <div class="boxInfo">
-                    <p class="tag">Camisa</p>
-                    <p class="title">Camisa feminina</p>
-                    <p class="price">R$ <span>99,00</span></p>
-                </div>
-            </a>
-        </div>
-        
-        <div class="productBox">
-            <a href="#">
-                <div class="boxImg">
-                    <img src="https://bit.ly/2lRSfRe" alt="">
-                </div>
-                <div class="boxInfo">
-                    <p class="tag">Camisa</p>
-                    <p class="title">Camisa feminina</p>
-                    <p class="price">R$ <span>99,00</span></p>
-                </div>
-            </a>
-        </div>
-        
-        <div class="productBox">
-            <a href="#">
-                <div class="boxImg">
-                    <img src="https://bit.ly/2lRSfRe" alt="">
-                </div>
-                <div class="boxInfo">
-                    <p class="tag">Camisa</p>
-                    <p class="title">Camisa feminina</p>
-                    <p class="price">R$ <span>99,00</span></p>
-                </div>
-            </a>
-        </div>
-        
-        <div class="productBox">
-            <a href="#">
-                <div class="boxImg">
-                    <img src="https://bit.ly/2lRSfRe" alt="">
-                </div>
-                <div class="boxInfo">
-                    <p class="tag">Camisa</p>
-                    <p class="title">Camisa feminina</p>
-                    <p class="price">R$ <span>99,00</span></p>
-                </div>
-            </a>
-        </div>
-        
-        <div class="productBox">
-            <a href="#">
-                <div class="boxImg">
-                    <img src="https://bit.ly/2lRSfRe" alt="">
-                </div>
-                <div class="boxInfo">
-                    <p class="tag">Camisa</p>
-                    <p class="title">Camisa feminina</p>
-                    <p class="price">R$ <span>99,00</span></p>
-                </div>
-            </a>
-        </div>
+        {/loop}
         
     </div>
 </div>

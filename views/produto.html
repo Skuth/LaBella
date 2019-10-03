@@ -38,7 +38,7 @@
             
             {loop="$produtos"}
             <div class="productBox">
-                <a href="/produto/{function="name($value.nome)"}/{$key}">
+                <a href="/produto/{function="name($value.nome)"}/{$value.id}">
                     <div class="boxImg">
                         <img src="{$value.img}" alt="">
                     </div>

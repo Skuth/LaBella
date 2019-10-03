@@ -7,8 +7,8 @@
         <div class="social infoBox">
             <p class="title">Redes sociais</p>
             <div class="box">
-                <a href="#" target="_blanked"><i class="fab fa-facebook-square"></i></a>
-                <a href="#" target="_blanked"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/lojalabellacf/" target="_blanked"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://www.instagram.com/la.bella.cf/" target="_blanked"><i class="fab fa-instagram"></i></a>
                 <a href="https://api.whatsapp.com/send?phone=5522996014887" target="_blanked"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
