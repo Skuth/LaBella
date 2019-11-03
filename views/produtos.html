@@ -25,22 +25,26 @@
         </li>
     </div>
     
-    <div class="products">
+    <div class="products" style="min-height: 50vh;">
         
-        {loop="$produtos"}
-        <div class="productBox">
-            <a href="/produto/{function="name($value.nome)"}/{$value.id}">
-                <div class="boxImg">
-                    <img src="{$value.img}" alt="">
-                </div>
-                <div class="boxInfo">
-                    <p class="tag">{$value.marca}</p>
-                    <p class="title">{$value.nome}</p>
-                    <p class="price">R$ <span>{$value.valor}</span></p>
-                </div>
-            </a>
-        </div>
-        {/loop}
+        {if="$produtos!=NULL"}
+            {loop="$produtos"}
+            <div class="productBox">
+                <a href="/produto/{function="name($value.nome)"}/{$value.id}">
+                    <div class="boxImg">
+                        <img src="{$value.img}" alt="">
+                    </div>
+                    <div class="boxInfo">
+                        <p class="tag">{$value.marca}</p>
+                        <p class="title">{$value.nome}</p>
+                        <p class="price">R$ <span>{$value.valor}</span></p>
+                    </div>
+                </a>
+            </div>
+            {/loop}
+        {else}
+            <p style="text-align: center; display: block; width: 100%; font-size: 24px;">Nada encontrado</p>
+        {/if}
         
     </div>
 </div>

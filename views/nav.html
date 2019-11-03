@@ -10,7 +10,7 @@
     <div class="navEnd nav">
         <ul>
             <!-- <li><a href="/conta">Minha conta</a></li> -->
-            <li><a href="#" class="icon"><i class="fas fa-search"></i></a></li>
+            <!-- <li><a href="#" class="icon"><i class="fas fa-search"></i></a></li> -->
             <!-- <li class="cart">
                 <a href="#" class="icon"><i class="fas fa-shopping-bag"></i></a>
                 <span class="badge">0</span>

@@ -12,6 +12,7 @@ $config['displayErrorDetails'] = true;
 $app = new \Slim\App(['settings' => $config]);
 
 require_once("routes/site.php");
+require_once("routes/admin.php");
 
 $app->run();
 

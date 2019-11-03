@@ -17,6 +17,13 @@ class Banner {
 
     }
 
+    public function listAll() {
+        $sql = new Sql();
+        $query = "SELECT * FROM banner";
+        $res = $sql->select($query);
+        return $res;
+    }
+
 }
 
 ?>
