@@ -20,17 +20,18 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col">
-                                <h3 class="mb-0">Editar marca de id <?php echo htmlspecialchars( $id, ENT_COMPAT, 'UTF-8', FALSE ); ?></h3>
+                                <h3 class="mb-0">Editar marca de id <?php echo htmlspecialchars( $marca["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h3>
                             </div>
                         </div>
                     </div>
                     
                     <div class="card-body">
-                        <form>
+                        <form method="POST" action="/admin/marca/editmarca">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" required class="form-control" placeholder="Nome da marca" name="marca">
+                                        <input type="text" required class="form-control" value="<?php echo htmlspecialchars( $marca["marca"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" name="marca">
+                                        <input type="hidden" name="id" value="<?php echo htmlspecialchars( $marca["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                                     </div>
                                 </div>
                             </div>

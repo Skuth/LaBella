@@ -25,6 +25,19 @@ $app->get("/admin/marca/cadastrar", function($req, $res, $args) {
     }
 });
 
+$app->post("/admin/marca/cadmarca", function($req, $res, $args) {
+    if(User::checkUser()) {
+        $param = isset($_POST["marca"]) ? $_POST["marca"] : NULL;
+
+        if ($param != NULL) {
+            $marca = new Marca();
+            $marca->cadMarca($param);
+            return $res->withRedirect("/admin/marcas");
+            exit;
+        }
+    }
+});
+
 $app->get("/admin/marca/editar/{id}", function($req, $res, $args) {
     if (!User::checkUser()) {
         return $res->withRedirect("/admin");
@@ -32,8 +45,27 @@ $app->get("/admin/marca/editar/{id}", function($req, $res, $args) {
 
     $id = $args["id"];
 
-    $page = new PageAdmin();
-    $page->setTpl("marca/editMarca", ["id"=>$id]);
+    if ($id != NULL && $id > 0) {
+        $marca = new Marca();
+        $marcaId = $marca->listById($id);
+
+        $page = new PageAdmin();
+        $page->setTpl("marca/editMarca", ["marca"=>$marcaId[0]]);
+    }
+});
+
+$app->post("/admin/marca/editmarca", function($req, $res, $args) {
+    if(User::checkUser()) {
+        $id = isset($_POST["id"]) ? $_POST["id"] : NULL;
+        $param = isset($_POST["marca"]) ? $_POST["marca"] : NULL;
+
+        if ($param != NULL) {
+            $marca = new Marca();
+            $marca->editMarca($id, $param);
+            return $res->withRedirect("/admin/marcas");
+            exit;
+        }
+    }
 });
 
 $app->post("/admin/marca/deletar/{id}", function($req, $res, $args) {
@@ -41,7 +73,12 @@ $app->post("/admin/marca/deletar/{id}", function($req, $res, $args) {
         return $res->withRedirect("/admin");
     } else {
         $id = $args["id"];  
-        return $id;
+        if ($id != NULL && $id > 0) {
+            $marca = new Marca();
+            $marca->delMarca($id);
+            return $res->withRedirect("/admin/marcas");
+            exit;
+        }
     }
 });
 

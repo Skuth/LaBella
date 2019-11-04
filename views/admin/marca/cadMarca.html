@@ -26,7 +26,7 @@
                     </div>
                     
                     <div class="card-body">
-                        <form method="GET">
+                        <form method="POST" action="/admin/marca/cadmarca">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">

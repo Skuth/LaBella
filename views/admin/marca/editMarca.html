@@ -20,17 +20,18 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col">
-                                <h3 class="mb-0">Editar marca de id {$id}</h3>
+                                <h3 class="mb-0">Editar marca de id {$marca.id}</h3>
                             </div>
                         </div>
                     </div>
                     
                     <div class="card-body">
-                        <form>
+                        <form method="POST" action="/admin/marca/editmarca">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" required class="form-control" placeholder="Nome da marca" name="marca">
+                                        <input type="text" required class="form-control" value="{$marca.marca}" name="marca">
+                                        <input type="hidden" name="id" value="{$marca.id}">
                                     </div>
                                 </div>
                             </div>

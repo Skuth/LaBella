@@ -20,6 +20,7 @@ function delProduct(id) {
                             `Produto de id ${id} deletado com sucesso!`,
                             'success'
                         )
+                        setTimeout(() => {location.reload()}, 1000)
                     }
                 }
             });
@@ -49,6 +50,7 @@ function delMarca(id) {
                             `Marca de id ${id} deletado com sucesso!`,
                             'success'
                         )
+                        setTimeout(() => {location.reload()}, 1000)
                     }
                 }
             });
@@ -78,6 +80,7 @@ function delCategoria(id) {
                             `Categoria de id ${id} deletado com sucesso!`,
                             'success'
                         )
+                        setTimeout(() => {location.reload()}, 1000)
                     }
                 }
             });
@@ -107,6 +110,7 @@ function delBanner(id) {
                             `Banner de id ${id} deletado com sucesso!`,
                             'success'
                         )
+                        setTimeout(() => {location.reload()}, 1000)
                     }
                 }
             });
