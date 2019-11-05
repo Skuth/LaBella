@@ -42,7 +42,7 @@
                             <tbody>
                                 <?php $counter1=-1;  if( isset($banners) && ( is_array($banners) || $banners instanceof Traversable ) && sizeof($banners) ) foreach( $banners as $key1 => $value1 ){ $counter1++; ?>
                                 <tr>
-                                    <th scope="row" style="text-align: center;"><img src="<?php echo htmlspecialchars( $value1["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" width="100"></th>
+                                    <th scope="row" style="text-align: center;"><img src="/assets/banner/<?php echo htmlspecialchars( $value1["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" width="100"></th>
                                     <td style="text-align: center;">
                                         <a onclick="SetBanner(<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>)" style="color: #f4f5f7;" class="btn btn-icon btn-2 btn-md btn-success">
                                             <span class="btn-inner--icon"><i class="fas fa-eye"></i></span>

@@ -1,6 +1,6 @@
 <header class="header">
-    <div class="imgBox">
-        <img src="{$banner.img}" alt="">
+    <div class="imgBox" {if="$banner.link"}onclick="window.location.href='{$banner.link}'"{/if}>
+        <img src="/assets/banner/{$banner.img}" alt="">
     </div>
 </header>
 

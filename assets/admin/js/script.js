@@ -102,7 +102,7 @@ function delBanner(id) {
         if(result.value) {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.1.1/admin/categoria/deletar/" + id,
+                url: "http://127.0.1.1/admin/banner/deletar/" + id,
                 success: function (res) {
                     if (res != "") {
                         Swal.fire(

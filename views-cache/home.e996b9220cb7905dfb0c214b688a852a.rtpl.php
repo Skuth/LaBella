@@ -1,6 +1,6 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><header class="header">
-    <div class="imgBox">
-        <img src="<?php echo htmlspecialchars( $banner["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="">
+    <div class="imgBox" <?php if( $banner["link"] ){ ?>onclick="window.location.href='<?php echo htmlspecialchars( $banner["link"], ENT_COMPAT, 'UTF-8', FALSE ); ?>'"<?php } ?>>
+        <img src="/assets/banner/<?php echo htmlspecialchars( $banner["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="">
     </div>
 </header>
 

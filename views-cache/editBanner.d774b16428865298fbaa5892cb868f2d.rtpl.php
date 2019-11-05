@@ -20,23 +20,24 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col">
-                                <h3 class="mb-0">Editar produto de id <?php echo htmlspecialchars( $id, ENT_COMPAT, 'UTF-8', FALSE ); ?></h3>
+                                <h3 class="mb-0">Editar produto de id <?php echo htmlspecialchars( $banner["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h3>
                             </div>
                         </div>
                     </div>
                     
                     <div class="card-body">
-                        <form>
+                        <form method="POST" action="/admin/banner/editbanner" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Link para redirect" name="link">
+                                        <input type="text" class="form-control" value="<?php echo htmlspecialchars( $banner["link"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" name="link">
+                                        <input type="hidden" name="id" value="<?php echo htmlspecialchars( $banner["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <input type="file" required name="banner" accept="image/png, image/jpeg">
+                                    <input type="file" name="img" accept="image/png, image/jpeg">
                                 </div>
                             </div>
                             <div class="row mt-4">
