@@ -1,5 +1,5 @@
 <header class="header">
-    <div class="imgBox" {if="$banner.link"}onclick="window.location.href='{$banner.link}'"{/if}>
+    <div class="imgBox" {if="$banner.link"}onclick="window.location.href='{$banner.link}'" style="cursor: pointer;"{/if}>
         <img src="/assets/banner/{$banner.img}" alt="">
     </div>
 </header>
@@ -38,7 +38,7 @@
         <div class="productBox">
             <a href="/produto/{function="name($value.nome)"}/{$value.id}">
                 <div class="boxImg">
-                    <img src="{$value.img}" alt="">
+                    <img src="/assets/produtos/{$value.img}" alt="">
                 </div>
                 <div class="boxInfo">
                     <p class="tag">{$value.marca}</p>

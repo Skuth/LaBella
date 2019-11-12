@@ -1,5 +1,5 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><header class="header">
-    <div class="imgBox" <?php if( $banner["link"] ){ ?>onclick="window.location.href='<?php echo htmlspecialchars( $banner["link"], ENT_COMPAT, 'UTF-8', FALSE ); ?>'"<?php } ?>>
+    <div class="imgBox" <?php if( $banner["link"] ){ ?>onclick="window.location.href='<?php echo htmlspecialchars( $banner["link"], ENT_COMPAT, 'UTF-8', FALSE ); ?>'" style="cursor: pointer;"<?php } ?>>
         <img src="/assets/banner/<?php echo htmlspecialchars( $banner["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="">
     </div>
 </header>
@@ -38,7 +38,7 @@
         <div class="productBox">
             <a href="/produto/<?php echo name($value1["nome"]); ?>/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 <div class="boxImg">
-                    <img src="<?php echo htmlspecialchars( $value1["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="">
+                    <img src="/assets/produtos/<?php echo htmlspecialchars( $value1["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="">
                 </div>
                 <div class="boxInfo">
                     <p class="tag"><?php echo htmlspecialchars( $value1["marca"], ENT_COMPAT, 'UTF-8', FALSE ); ?></p>

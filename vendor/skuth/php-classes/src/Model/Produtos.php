@@ -47,6 +47,27 @@ class Produtos extends Model {
 
     }
 
+    public function delProduto($id) {
+        $sql = new Sql();
+        $query = "DELETE FROM produtos WHERE id=:id";
+        $params = [":id"=>$id];
+        $res = $sql->query($query, $params);
+    }
+
+    public function cadProduto($img, $nome, $preco, $marca, $categoria) {
+        $sql = new Sql();
+        $query = "INSERT INTO produtos (marca, tipo, nome, valor, img) VALUES (:marca, :tipo, :nome, :valor, :img)";
+        $params = [":nome"=>$nome, ":valor"=>$preco, ":marca"=>$marca, ":tipo"=>$categoria, ":img"=>$img];
+        $res = $sql->query($query, $params);
+    }
+
+    public function editProduto($id, $img, $nome, $preco, $marca, $categoria) {
+        $sql = new Sql();
+        $query = "UPDATE produtos SET  marca=:marca, tipo=:tipo, nome=:nome, valor=:valor, img=:img WHERE id=:id";
+        $params = [":id"=>$id, ":nome"=>$nome, ":valor"=>$preco, ":marca"=>$marca, ":tipo"=>$categoria, ":img"=>$img];
+        $res = $sql->query($query, $params);
+    }
+
 }
 
 ?>

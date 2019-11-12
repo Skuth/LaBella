@@ -20,28 +20,51 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col">
-                            <h3 class="mb-0">Editar produto de id {$id}</h3>
+                            <h3 class="mb-0">Editar produto de id {$produto.id}</h3>
                         </div>
                     </div>
                 </div>
                 
                 <div class="card-body">
-                    <form>
+                    <form method="POST" action="/admin/produto/editproduto" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-10">
                                 <div class="form-group">
-                                    <input type="text" required class="form-control" placeholder="Nome do produto" name="nome">
+                                    <input type="text" required class="form-control" value="{$produto.nome}" name="nome">
+                                    <input type="hidden" name="id" value="{$produto.id}">
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <input type="number" required class="form-control" placeholder="Preço" name="preco">
+                                    <input type="number" required class="form-control" value="{$produto.valor}" name="preco">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <select required name="categoria">
+                                        <option value="{$produto.tipo}">{function="ucfirst($produto.tipo)"}</option>
+                                        {loop="$categorias"}
+                                        <option value="{$value.categoria}">{function="ucfirst($value.categoria)"}</option>
+                                        {/loop}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <select required name="marca">
+                                        <option value="{$produto.marca}">{function="ucfirst($produto.marca)"}</option>
+                                        {loop="$marcas"}
+                                        <option value="{$value.marca}">{function="ucfirst($value.marca)"}</option>
+                                        {/loop}
+                                    </select>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <input type="file" required name="foto" accept="image/png, image/jpeg">
+                                <input type="file" name="img" accept="image/png, image/jpeg">
                             </div>
                         </div>
                         <div class="row mt-4">

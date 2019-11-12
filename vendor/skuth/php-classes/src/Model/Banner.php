@@ -52,6 +52,17 @@ class Banner {
         return $res;
     }
 
+    public function setBanner($id) {
+        $sql = new Sql();
+        $query = "UPDATE banner SET active=:active";
+        $params = [":active"=>0];
+        $res = $sql->query($query, $params);
+        
+        $newQuery = "UPDATE banner SET active=:active WHERE id=:id";
+        $newParams = [":active"=>1, ":id"=>$id];
+        $newRes = $sql->query($newQuery, $newParams);
+    }
+
 }
 
 ?>

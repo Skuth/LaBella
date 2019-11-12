@@ -26,7 +26,7 @@
                 </div>
                 
                 <div class="card-body">
-                    <form method="GET">
+                    <form method="POST" action="/admin/produto/cadproduto" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-10">
                                 <div class="form-group">
@@ -40,8 +40,30 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <select required name="categoria">
+                                        <option value=""></option>
+                                        <?php $counter1=-1;  if( isset($categorias) && ( is_array($categorias) || $categorias instanceof Traversable ) && sizeof($categorias) ) foreach( $categorias as $key1 => $value1 ){ $counter1++; ?>
+                                        <option value="<?php echo htmlspecialchars( $value1["categoria"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo ucfirst($value1["categoria"]); ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <select required name="marca">
+                                        <option value=""></option>
+                                        <?php $counter1=-1;  if( isset($marcas) && ( is_array($marcas) || $marcas instanceof Traversable ) && sizeof($marcas) ) foreach( $marcas as $key1 => $value1 ){ $counter1++; ?>
+                                        <option value="<?php echo htmlspecialchars( $value1["marca"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo ucfirst($value1["marca"]); ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
-                                <input type="file" required name="foto" accept="image/png, image/jpeg">
+                                <input type="file" required name="img" accept="image/png, image/jpeg">
                             </div>
                         </div>
                         <div class="row mt-4">

@@ -126,13 +126,13 @@ function SetBanner(id) {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Sim, deletar',
+        confirmButtonText: 'Sim, confirmar',
         cancelButtonText: 'Cancelar'
     }).then((result) => {
         if(result.value) {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.1.1/admin/categoria/deletar/" + id,
+                url: "http://127.0.1.1/admin/banner/ativar/" + id,
                 success: function (res) {
                     if (res != "") {
                         Swal.fire(
@@ -140,6 +140,7 @@ function SetBanner(id) {
                             `Banner de id ${id} setado como principal!`,
                             'success'
                         )
+                        setTimeout(() => {location.reload()}, 1000)
                     }
                 }
             });

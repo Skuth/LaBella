@@ -27,10 +27,22 @@ $app->get("/admin/banner/cadastrar", function($req, $res, $args) {
 
 $app->post("/admin/banner/cadbanner", function($req, $res, $args) {
     if(User::checkUser()) {
-        $img = isset($_POST["img"]) ? $_POST["img"] : NULL;
+        $img = isset($_FILES["img"]) ? $_FILES["img"] : NULL;
         $link = isset($_POST["link"]) ? $_POST["link"] : NULL;
 
-        if ($param != NULL) {
+        if ($img != NULL) {
+            $upDir = $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR."assets".DIRECTORY_SEPARATOR."banner".DIRECTORY_SEPARATOR;
+            $imgTmp = isset($img["tmp_name"]) ? $img["tmp_name"] : NULL;
+            
+            if ($imgTmp !== NULL) {
+                $imgName = $img["name"];
+                $imgType = explode(".", $imgName)[1];
+                $imgNewName = md5(date("dmyhis").time()).".".$imgType;
+                $upFile = $upDir.basename($imgNewName);
+                move_uploaded_file($imgTmp, $upFile);
+                $img = $imgNewName;
+            }
+            
             $banner = new Banner();
             $banner->cadBanner($img, $link);
             return $res->withRedirect("/admin/banner");
@@ -60,8 +72,6 @@ $app->post("/admin/banner/editbanner", function($req, $res, $args) {
         $id = isset($_POST["id"]) ? $_POST["id"] : NULL;
         $img = isset($_FILES["img"]) ? $_FILES["img"] : NULL;
         $link = isset($_POST["link"]) ? $_POST["link"] : NULL;
-
-        var_dump($img);
 
         if ($img["error"] > 0 && $img["size"] <= 0) {
             $banner = new Banner();
@@ -98,6 +108,20 @@ $app->post("/admin/banner/deletar/{id}", function($req, $res, $args) {
         if ($id != NULL && $id > 0) {
             $banner = new Banner();
             $banner->delBanner($id);
+            return $res->withRedirect("/admin/banner");
+            exit;
+        }
+    }
+});
+
+$app->post("/admin/banner/ativar/{id}", function($req, $res, $args) {
+    if (!User::checkUser()) {
+        return $res->withRedirect("/admin");
+    } else {
+        $id = $args["id"];
+        if ($id != NULL && $id > 0) {
+            $banner = new Banner();
+            $banner->setBanner($id);
             return $res->withRedirect("/admin/banner");
             exit;
         }
