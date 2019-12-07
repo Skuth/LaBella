@@ -12,6 +12,8 @@
 
     <?php if( isset($produto) ){ ?>
         <!-- Add SEO Tags -->
+    <?php }else{ ?>
+        <!-- SEO site tags -->
     <?php } ?>
 </head>
 <body>

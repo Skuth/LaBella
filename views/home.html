@@ -83,11 +83,6 @@
                 <img src="https://bit.ly/2kyQ3y4" alt="">
             </div>
         </a>
-        <a href="#" target="_blanked">
-            <div class="box">
-                <img src="https://bit.ly/2kyQ3y4" alt="">
-            </div>
-        </a>
     </div>
     
     <div class="button">

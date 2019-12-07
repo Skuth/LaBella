@@ -21,10 +21,18 @@ $app->post("/admin/login/verificar", function($req, $res, $args) {
     $senha = $_POST["senha"] ? $_POST["senha"] : NULL;
 
     if ($login && $senha !== NULL) {
-        $_SESSION["login"] = [
-            "login"=>"skuth",
-            "nome"=>"Flávio Gomes"
-        ];
+        $user = new User();
+        $userLogin = $user->login($login, $senha);
+        if (count($userLogin) > 0) {
+            $_SESSION["login"] = [
+                "id"=>$userLogin[0]["id"],
+                "login"=>$userLogin[0]["login"],
+                "nome"=>$userLogin[0]["nome"]
+            ];
+        } else {
+            return $res->withRedirect("/admin/login/erro");
+            exit;
+        }
         return $res->withRedirect("/admin/painel");
         exit;
     } else {

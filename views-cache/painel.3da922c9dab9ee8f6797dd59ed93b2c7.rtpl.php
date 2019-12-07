@@ -90,7 +90,7 @@
                             <a href="/admin/produto/editar/1" class="btn btn-icon btn-md btn-2 btn-primary">
                                 <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
                             </a>
-                            <a onclick="delProduct(1)" style="color: #f4f5f7;" class="btn btn-icon btn-2 btn-md btn-danger">
+                            <a onclick="delProduct(<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>)" style="color: #f4f5f7;" class="btn btn-icon btn-2 btn-md btn-danger">
                                 <span class="btn-inner--icon"><i class="fas fa-trash"></i></span>
                             </a>
                         </td>

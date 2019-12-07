@@ -15,6 +15,14 @@ class User extends Model {
         }
     }
 
+    public function login($login, $senha) {
+        $sql = new Sql();
+        $query = "SELECT * FROM usuarios WHERE login=:login && senha=:senha";
+        $params = [":login"=>$login, ":senha"=>$senha];
+        $res = $sql->select($query, $params);
+        return $res;
+    }
+
 }
 
 

@@ -16,13 +16,6 @@
                 <?php } ?>
             </ul>
         </li>
-        <li>
-            ORDENAR
-            <ul>
-                <li><a href="#">Teste</a></li>
-                <li><a href="#">Teste</a></li>
-            </ul>
-        </li>
     </div>
     
     <div class="products" style="min-height: 50vh;">
