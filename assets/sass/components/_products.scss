@@ -1,13 +1,11 @@
 .products {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    display: block;
     .productBox {
-        flex: 0 0 calc(100% / 4 - 20px * 2);
+        width: calc(100% / 3 - 20px * 2 - 4px);
         margin: 20px;
         position: relative;
         overflow: hidden;
+        display: inline-block;
         border-radius: 4px;
         @include boxShadow(0 0 10px rgba(0,0,0,0.1));
         @include transition(all .3s);

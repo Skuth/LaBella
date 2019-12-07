@@ -1,0 +1,96 @@
+@media (max-width: 600px) {
+    .products {
+        .productBox {
+            width: calc(100% / 1 - 20px * 2 - 4px);
+        }
+    }
+    .offers {
+        .offerBox {
+            position: relative;
+            .offerImg {
+                position: absolute;
+                width: 100%;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                z-index: 2;
+                .imgBox {
+                    max-width: 100%;
+                }
+            }
+            .offerText {
+                z-index: 3;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                text-align: center;
+                margin: 0 auto;
+                p {
+                    margin-top: 20px;
+                }
+                a {
+                    width: calc(100% - 15px * 2);
+                }
+            }
+        }
+    }
+    .productsList {
+        .productDesc {
+            width: calc(100% - 20px * 2)!important;
+            margin: 0 auto;
+            .title {
+                font-size: 30px!important;
+            }
+        }
+    }
+    .instagram {
+        .pictureContainer {
+            a {
+                flex: 0 0 calc(100% / 2 - 10px * 2);
+            }
+        }
+    }
+    .footer {
+        .footerBox {
+            .infoBox {
+                text-align: center;
+                flex: 0 0 calc(100%);
+                margin-bottom: 80px;
+            }
+        }
+        .footerBottom {
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+    .productsList {
+        .filters {
+            > li {
+            }
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    .navbar {
+        display: block;
+        .nav {
+            h1 {
+                display: block;
+                text-align: center;
+            }
+            ul {
+                display: block;
+                li {
+                    text-align: center;
+                    margin: 0 auto;
+                    display: block;
+                    a {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
