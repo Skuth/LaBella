@@ -13,7 +13,7 @@ class Sql {
 
     public function __construct()
     {
-        $this->conn = new \PDO("mysql:host=".self::HOST.";dbname=".self::DB, self::USER, self::PASS);
+        $this->conn = new \PDO("mysql:host=".self::HOST.";dbname=".self::DB, self::USER, self::PASS, array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
     }
 
     public function setParams($stmt, $params = [])

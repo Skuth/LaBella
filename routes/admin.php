@@ -3,7 +3,7 @@
 use Skuth\PageAdmin;
 use Skuth\Model\User;
 use Skuth\Model\Produtos;
-use Skuth\Model\site;
+use Skuth\Model\Site;
 
 $app->get("/admin", function($req, $res, $args){
     if (USer::checkUser()) {

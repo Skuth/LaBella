@@ -64,12 +64,6 @@
             }
         }
     }
-    .productsList {
-        .filters {
-            > li {
-            }
-        }
-    }
 }
 
 @media (max-width: 560px) {
@@ -88,6 +82,14 @@
                     display: block;
                     a {
                         display: block;
+                        &:hover {
+                            &:after {
+                                display: none;
+                            }  
+                            &:before {
+                                display: none;
+                            }
+                        }
                     }
                 }
             }

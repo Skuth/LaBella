@@ -9686,4 +9686,10 @@ html {
   .navbar .nav ul li a {
     display: block;
   }
+  .navbar .nav ul li a:hover:after {
+    display: none;
+  }
+  .navbar .nav ul li a:hover:before {
+    display: none;
+  }
 }
