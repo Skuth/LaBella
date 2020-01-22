@@ -48,7 +48,8 @@ $app->post("/admin/produto/cadproduto", function($req, $res, $args) {
             
             if ($imgTmp !== NULL) {
                 $imgName = $img["name"];
-                $imgType = explode(".", $imgName)[1];
+                $imgCount = explode(".", $imgName);
+                $imgType = $imgCount[count($imgCount) - 1];
                 $imgNewName = md5(date("dmyhis").time()).".".$imgType;
                 $upFile = $upDir.basename($imgNewName);
                 move_uploaded_file($imgTmp, $upFile);
@@ -105,7 +106,8 @@ $app->post("/admin/produto/editproduto", function($req, $res, $args) {
             
             if ($imgTmp !== NULL) {
                 $imgName = $img["name"];
-                $imgType = explode(".", $imgName)[1];
+                $imgCount = explode(".", $imgName);
+                $imgType = $imgCount[count($imgCount) - 1];
                 $imgNewName = md5(date("dmyhis").time()).".".$imgType;
                 $upFile = $upDir.basename($imgNewName);
                 move_uploaded_file($imgTmp, $upFile);

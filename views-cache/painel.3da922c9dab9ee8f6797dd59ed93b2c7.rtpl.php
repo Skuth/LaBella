@@ -87,7 +87,7 @@
                         <td style="text-align: center;"><?php echo htmlspecialchars( $value1["valor"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                         <td style="text-align: center;"><?php echo htmlspecialchars( $value1["visitas"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                         <td style="text-align: center;">
-                            <a href="/admin/produto/editar/1" class="btn btn-icon btn-md btn-2 btn-primary">
+                            <a href="/admin/produto/editar/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-icon btn-md btn-2 btn-primary">
                                 <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
                             </a>
                             <a onclick="delProduct(<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>)" style="color: #f4f5f7;" class="btn btn-icon btn-2 btn-md btn-danger">

@@ -17,6 +17,17 @@ class Produtos extends Model {
 
     }
 
+    public function listLast($c)
+    {
+
+        $sql = new Sql();
+        $query = "SELECT * FROM produtos LIMIT ".$c;
+        $res = $sql->select($query);
+        return $res;
+
+    }
+
+
     public function listById($id)
     {
 
@@ -67,6 +78,7 @@ class Produtos extends Model {
         $params = [":id"=>$id, ":nome"=>$nome, ":valor"=>$preco, ":marca"=>$marca, ":tipo"=>$categoria, ":img"=>$img];
         $res = $sql->query($query, $params);
     }
+    
 
 }
 

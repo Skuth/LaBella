@@ -27,7 +27,7 @@
             <p style="padding: 30px; color: red;">No momento vendas apenas por Whatsapp</p>
             
             <div class="button">
-                <a href="https://api.whatsapp.com/send?phone=5522996014887&text=Estava no site e me interessei pelo '<?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>'" target="_blank">Comprar</a>
+                <a href="https://api.whatsapp.com/send?phone=5522996014887&text=Estava no site e me interessei pelo produto '<?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>'" target="_blank">Comprar</a>
             </div>
             
         </div>

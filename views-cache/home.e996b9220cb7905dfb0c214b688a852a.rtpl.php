@@ -56,7 +56,7 @@
     </div>
 </section>
 
-<section class="instagram">
+<!-- <section class="instagram">
     <div class="text">
         <h3>Instagram</h3>
         <p>@la.bella.cf</p>
@@ -88,4 +88,4 @@
     <div class="button">
         <a href="https://www.instagram.com/la.bella.cf/" class="pk" target="_blanked">Ver mais</a>
     </div>
-</section>
+</section> -->

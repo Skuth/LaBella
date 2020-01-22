@@ -16,7 +16,7 @@ function name($name) {
 $app->get("/", function($req, $res, $args) {
  
     $produtos = new Produtos();
-    $listaProdutos = $produtos->listAll();
+    $listaProdutos = $produtos->listLast(6);
 
     $banner = Banner::getActiveBanner()[0];
     

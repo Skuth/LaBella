@@ -4,7 +4,7 @@
         <ul>
             <li><a href="/">Inicio</a></li>
             <li><a href="/produtos/feminino">Feminino</a></li>
-            <li><a href="/produtos/masculino">Masculino</a></li>
+            <!-- <li><a href="/produtos/masculino">Masculino</a></li> -->
         </ul>
     </div>
     <div class="navEnd nav">
