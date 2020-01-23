@@ -67,21 +67,54 @@
 }
 
 @media (max-width: 560px) {
+    #mobileNav {
+        display: block;
+        position: absolute;
+        z-index: 20;
+        color: $w1;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        padding: 20px;
+    }
     .navbar {
         display: block;
-        .nav {
+        .navStart {
             h1 {
                 display: block;
                 text-align: center;
             }
+            .open {
+                top: 0!important;
+                filter: opacity(1)!important;
+                @include select();
+            }
             ul {
-                display: block;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                position: fixed;
+                top: -100vh;
+                left: 0;
+                filter: opacity(1);
+                width: 100%;
+                height: 100vh;
+                padding: 0!important;
+                margin: 0 auto!important;
+                z-index: 10;
+                background: rgba(0,0,0,0.8);
+
+                @include transition(all 1s, cubic-bezier(0.65, 0.05, 0.36, 1));
                 li {
                     text-align: center;
                     margin: 0 auto;
                     display: block;
+                    position: relative;
+                    z-index: 20;
                     a {
                         display: block;
+                        padding: 40px;
                         &:hover {
                             &:after {
                                 display: none;
