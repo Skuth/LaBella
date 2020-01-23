@@ -1,3 +1,5 @@
+const ip = "http://127.0.0.1/"
+
 function delProduct(id) {
     Swal.fire({
         title: 'Tem certeza?',
@@ -12,7 +14,7 @@ function delProduct(id) {
         if(result.value) {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.1.1/admin/produto/deletar/" + id,
+                url: ip + "admin/produto/deletar/" + id,
                 success: function (res) {
                     if (res != "") {
                         Swal.fire(
@@ -42,7 +44,7 @@ function delMarca(id) {
         if(result.value) {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.1.1/admin/marca/deletar/" + id,
+                url: ip + "admin/marca/deletar/" + id,
                 success: function (res) {
                     if (res != "") {
                         Swal.fire(
@@ -72,7 +74,7 @@ function delCategoria(id) {
         if(result.value) {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.1.1/admin/categoria/deletar/" + id,
+                url: ip + "admin/categoria/deletar/" + id,
                 success: function (res) {
                     if (res != "") {
                         Swal.fire(
@@ -102,7 +104,7 @@ function delBanner(id) {
         if(result.value) {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.1.1/admin/banner/deletar/" + id,
+                url: ip + "admin/banner/deletar/" + id,
                 success: function (res) {
                     if (res != "") {
                         Swal.fire(
@@ -132,7 +134,7 @@ function SetBanner(id) {
         if(result.value) {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.1.1/admin/banner/ativar/" + id,
+                url: ip + "admin/banner/ativar/" + id,
                 success: function (res) {
                     if (res != "") {
                         Swal.fire(

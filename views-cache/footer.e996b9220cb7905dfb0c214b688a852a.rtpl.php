@@ -2,7 +2,7 @@
     <div class="footerBox">
         <div class="laBella infoBox">
             <p class="logo">LaBella</p>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <!-- <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
         </div>
         <div class="social infoBox">
             <p class="title">Redes sociais</p>

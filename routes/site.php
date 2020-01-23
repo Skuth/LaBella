@@ -27,12 +27,14 @@ $app->get("/", function($req, $res, $args) {
 
 $app->get("/produto/{name}/{id}", function($req, $res, $args) {
     
+    $url = "https://".$_SERVER["HTTP_HOST"]."/produto/".$args["name"]."/".$args["id"];
+
     $produtos = new Produtos();
     $listaProdutos = $produtos->listAll();
     $produto = $produtos->listById($args["id"])[0];
     
     $page = new Page(["data"=>["produto"=>$produto]]);
-    $page->setTpl("produto", ["produto"=>$produto, "produtos"=>$listaProdutos]);
+    $page->setTpl("produto", ["produto"=>$produto, "produtos"=>$listaProdutos, "url"=>$url]);
     
 });
 

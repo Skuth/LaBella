@@ -11,7 +11,7 @@
             <a href="/produtos/feminino">Ver mais</a>
         </div>
         <div class="offerImg">
-            <div class="imgBox" style="--main-bg-img: url(https://bit.ly/2kiql0z)"></div>
+            <div class="imgBox" style="--main-bg-img: url('/assets/img/img1.png')"></div>
         </div>
     </div>
     
@@ -21,7 +21,7 @@
             <a href="/produtos/sapatos">Ver mais</a>
         </div>
         <div class="offerImg">
-            <div class="imgBox" style="--main-bg-img: url(https://bit.ly/2mcIv4h)"></div>
+            <div class="imgBox" style="--main-bg-img: url('/assets/img/img2.png')"></div>
         </div>
     </div>
 </section>

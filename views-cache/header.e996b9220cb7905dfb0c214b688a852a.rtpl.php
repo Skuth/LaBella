@@ -28,6 +28,16 @@
     <link rel="manifest" href="assets/icon/manifest.json">
     <meta name="msapplication-TileColor" content="#FC5185">
     <meta name="msapplication-TileImage" content="assets/icon/ms-icon-144x144.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156753818-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-156753818-1');
+    </script>
+
     <meta name="theme-color" content="#FC5185">
 
     <link rel="stylesheet" href="assets/css/style.css">
@@ -37,31 +47,31 @@
 
         <meta name="description" content="La Bella - <?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
 
-        <meta property="og:url" content="http://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?><?php echo htmlspecialchars( $_SERVER['REQUEST_URI'], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+        <meta property="og:url" content="https://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?><?php echo htmlspecialchars( $_SERVER['REQUEST_URI'], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
         <meta property="og:type" content="website">
         <meta property="og:title" content="La Bella - <?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
         <meta property="og:description" content="<?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> na La Bella, venha conferir">
-        <meta property="og:image" content="http://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?>/assets/produtos/<?php echo htmlspecialchars( $produto["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+        <meta property="og:image" content="https://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?>/assets/produtos/<?php echo htmlspecialchars( $produto["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
 
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="La Bella - <?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
         <meta name="twitter:description" content="<?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> na La Bella, venha conferir">
-        <meta name="twitter:image" content="http://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?>/assets/produtos/<?php echo htmlspecialchars( $produto["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+        <meta name="twitter:image" content="https://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?>/assets/produtos/<?php echo htmlspecialchars( $produto["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
     <?php }else{ ?>
         <title>La Bella - Moda feminina</title>
 
         <meta name="description" content="La Bella - Moda feminina. Sandálias, Saltos, Sapatos e muito mais ">
         
-        <meta property="og:url" content="http://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?><?php echo htmlspecialchars( $_SERVER['REQUEST_URI'], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+        <meta property="og:url" content="https://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?><?php echo htmlspecialchars( $_SERVER['REQUEST_URI'], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
         <meta property="og:type" content="website">
         <meta property="og:title" content="La Bella - Moda feminina">
         <meta property="og:description" content="La Bella - Moda feminina. Sandálias, Saltos, Sapatos e muito mais">
-        <meta property="og:image" content="http://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?>/assets/img/labella-banner.jpg">
+        <meta property="og:image" content="https://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?>/assets/img/labella-banner.jpg">
 
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="La Bella - Moda feminina">
         <meta name="twitter:description" content="La Bella - Moda feminina. Sandálias, Saltos, Sapatos e muito mais">
-        <meta name="twitter:image" content="http://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?>/assets/img/labella-banner.jpg">
+        <meta name="twitter:image" content="https://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?>/assets/img/labella-banner.jpg">
     <?php } ?>
 </head>
 <body>

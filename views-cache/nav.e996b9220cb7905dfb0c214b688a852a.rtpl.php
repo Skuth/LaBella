@@ -1,4 +1,5 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><nav class="navbar">
+    <o id='mobileNav'>&#9776;</o>
     <div class="navStart nav">
         <h1><a href="/">La Bella</a></h1>
         <ul>
