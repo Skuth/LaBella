@@ -1,0 +1,9 @@
+# Group 1
+User-agent: *
+Disallow: /admin/
+
+# Group 2
+User-agent: *
+Allow: /
+
+Sitemap: https://labellagabi.com.br/sitemap.xml

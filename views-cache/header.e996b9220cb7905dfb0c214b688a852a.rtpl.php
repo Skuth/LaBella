@@ -1,14 +1,16 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><!DOCTYPE html>
-<html lang="pt-Br">
+<html lang="pt-br">
 <head>
     <base href="http://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Language" content="pt-br">
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="mode feminina, roupas, sapatos, la bella, sapato feminino, rasteirinha, sandálias, macacão, salto, salto doze, mule ">
-    <meta name="robots" content=""><meta name="revisit-after" content="1 day">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="1 day">
     <meta name="language" content="Portuguese">
     <meta name="generator" content="N/A">
 
@@ -58,7 +60,7 @@
         <meta name="twitter:description" content="<?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> na La Bella, venha conferir">
         <meta name="twitter:image" content="https://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?>/assets/produtos/<?php echo htmlspecialchars( $produto["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
     <?php }else{ ?>
-        <title>La Bella - Moda feminina</title>
+        <title>La Bella - Moda feminina | Sandálias, Sapatilhas, Rasteirinhas e muito mais</title>
 
         <meta name="description" content="La Bella - Moda feminina. Sandálias, Saltos, Sapatos e muito mais ">
         

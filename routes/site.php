@@ -6,8 +6,8 @@ use Skuth\Model\Banner;
 use Skuth\Model\Categoria;
 use Skuth\Model\Marca;
 
-
 function name($name) {
+    $name = strtr(utf8_decode($name), utf8_decode('àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ'), 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
     $name = str_replace(" ", "-", $name);
     $name = strtolower($name);
     return $name;

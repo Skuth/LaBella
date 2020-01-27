@@ -3,11 +3,11 @@
         <div class="productPictures">
             
             <div class="productSlide">
-                <img src="/assets/produtos/<?php echo htmlspecialchars( $produto["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                <img src="/assets/produtos/<?php echo htmlspecialchars( $produto["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Imagem do produto - <?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
             </div>
             
             <div class="productImg">
-                <img src="/assets/produtos/<?php echo htmlspecialchars( $produto["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                <img src="/assets/produtos/<?php echo htmlspecialchars( $produto["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Imagem do produto - <?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
             </div>
             
         </div>
@@ -40,7 +40,7 @@
             <div class="productBox">
                 <a href="/produto/<?php echo name($value1["nome"]); ?>/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                     <div class="boxImg">
-                        <img src="/assets/produtos/<?php echo htmlspecialchars( $value1["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="">
+                        <img src="/assets/produtos/<?php echo htmlspecialchars( $value1["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Imagem do produto - <?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                     </div>
                     <div class="boxInfo">
                         <p class="tag"><?php echo htmlspecialchars( $value1["marca"], ENT_COMPAT, 'UTF-8', FALSE ); ?></p>
