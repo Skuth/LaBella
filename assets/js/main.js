@@ -1,4 +1,9 @@
 $(document).ready(() => {
+
+    $(".offerImg .imgBox").each((i, v) => { 
+         $(v).css("background-image", "url("+ $(v).attr("data-img") +")")
+    });
+
     $(".filters li").click((e) => {
         let ul = e.target.children[0]
         let btn = e.target
