@@ -46,7 +46,7 @@
                         <tbody>
                             {loop="$produtos"}
                             <tr>
-                                <td style="text-align: center;"><img src="/assets/produtos/{$value.img}" width="40" alt="foto do produto {$value.nome}"></td>
+                                <td style="text-align: center;"><img src="/assets/produtos/{$value.img[0]}" width="40" alt="foto do produto {$value.nome}"></td>
                                 <th scope="row" style="text-align: center;">{$value.nome}</th>
                                 <td style="text-align: center;">{$value.valor}</td>
                                 <td style="text-align: center;">{$value.visitas}</td>

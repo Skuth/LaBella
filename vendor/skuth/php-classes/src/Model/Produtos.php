@@ -11,7 +11,7 @@ class Produtos extends Model {
     {
 
         $sql = new Sql();
-        $query = "SELECT * FROM produtos";
+        $query = "SELECT * FROM produtos ORDER BY id DESC";
         $res = $sql->select($query);
         return $res;
 
@@ -21,7 +21,7 @@ class Produtos extends Model {
     {
 
         $sql = new Sql();
-        $query = "SELECT * FROM produtos LIMIT ".$c;
+        $query = "SELECT * FROM produtos ORDER BY id DESC LIMIT ".$c;
         $res = $sql->select($query);
         return $res;
 

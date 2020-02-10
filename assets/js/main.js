@@ -43,4 +43,12 @@ $(document).ready(() => {
             }
         })
     }
+
 })
+
+function setImg(box) {
+    const imgBox = $("#productImg")[0]
+    const src = $(box).attr("src")
+    
+    $(imgBox).attr("src", src)
+}

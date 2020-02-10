@@ -63,7 +63,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <input type="file" required name="img" accept="image/png, image/jpeg">
+                                <input type="file" required name="img[]" accept="image/png, image/jpeg" multiple>
                             </div>
                         </div>
                         <div class="row mt-4">

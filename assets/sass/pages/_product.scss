@@ -20,6 +20,7 @@
                     width: 100%;
                     margin-top: 20px;
                     border-radius: 4px;
+                    cursor: pointer;
                     @include boxShadow(0 0 20px rgba(0,0,0,0.1));
                 }
             }

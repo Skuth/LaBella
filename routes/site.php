@@ -19,6 +19,11 @@ $app->get("/", function($req, $res, $args) {
     $listaProdutos = $produtos->listLast(6);
 
     $banner = Banner::getActiveBanner()[0];
+
+    foreach ($listaProdutos as $key => $value) {
+        $img = explode(",", $value["img"]);
+        $listaProdutos[$key]["img"] = $img;
+    }
     
     $page = new Page();
     $page->setTpl("home", ["produtos"=>$listaProdutos, "banner"=>$banner]);
@@ -31,10 +36,27 @@ $app->get("/produto/{name}/{id}", function($req, $res, $args) {
 
     $produtos = new Produtos();
     $listaProdutos = $produtos->listAll();
+    $listaProdutosFinal = [];
     $produto = $produtos->listById($args["id"])[0];
     
+    shuffle($listaProdutos);
+
+    $produtoImg = explode(",", $produto["img"]);
+    $produto["img"] = $produtoImg;
+
+    foreach ($listaProdutos as $key => $value) {
+        $img = explode(",", $value["img"]);
+        $listaProdutos[$key]["img"] = $img;
+    }
+    
+    foreach ($listaProdutos as $key => $value) {
+        if($key <= 5) {
+            array_push($listaProdutosFinal, $value);
+        }
+    }
+    
     $page = new Page(["data"=>["produto"=>$produto]]);
-    $page->setTpl("produto", ["produto"=>$produto, "produtos"=>$listaProdutos, "url"=>$url]);
+    $page->setTpl("produto", ["produto"=>$produto, "produtos"=>$listaProdutosFinal, "url"=>$url]);
     
 });
 
@@ -55,6 +77,11 @@ $app->get("/produtos[/{tipo}[/{marca}]]", function($req, $res, $args) {
         }
     } else {
         $listaProdutos = $produtos->listAll();
+    }
+
+    foreach ($listaProdutos as $key => $value) {
+        $img = explode(",", $value["img"]);
+        $listaProdutos[$key]["img"] = $img;
     }
     
     $page = new Page();

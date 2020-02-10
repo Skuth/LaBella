@@ -46,7 +46,7 @@
                         <tbody>
                             <?php $counter1=-1;  if( isset($produtos) && ( is_array($produtos) || $produtos instanceof Traversable ) && sizeof($produtos) ) foreach( $produtos as $key1 => $value1 ){ $counter1++; ?>
                             <tr>
-                                <td style="text-align: center;"><img src="/assets/produtos/<?php echo htmlspecialchars( $value1["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" width="40" alt="foto do produto <?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"></td>
+                                <td style="text-align: center;"><img src="/assets/produtos/<?php echo htmlspecialchars( $value1["img"]["0"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" width="40" alt="foto do produto <?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"></td>
                                 <th scope="row" style="text-align: center;"><?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?></th>
                                 <td style="text-align: center;"><?php echo htmlspecialchars( $value1["valor"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                                 <td style="text-align: center;"><?php echo htmlspecialchars( $value1["visitas"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>

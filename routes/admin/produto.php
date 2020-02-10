@@ -12,6 +12,11 @@ $app->get("/admin/produtos", function($req, $res, $args) {
     } else {
         $produtos = new Produtos();
         $prods = $produtos->listAll();
+
+        foreach ($prods as $key => $value) {
+            $img = explode(",", $value["img"]);
+            $prods[$key]["img"] = $img;
+        }
         
         $page = new PageAdmin();
         $page->setTpl("produto/produtos", ["produtos"=>$prods]);
@@ -42,22 +47,35 @@ $app->post("/admin/produto/cadproduto", function($req, $res, $args) {
         $marca = isset($_POST["marca"]) ? $_POST["marca"] : NULL;
         $cateogira = isset($_POST["categoria"]) ? $_POST["categoria"] : NULL;
 
-        if ($img != NULL) {
+        if ($img["tmp_name"][0] != NULL) {
             $upDir = $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR."assets".DIRECTORY_SEPARATOR."produtos".DIRECTORY_SEPARATOR;
-            $imgTmp = isset($img["tmp_name"]) ? $img["tmp_name"] : NULL;
-            
-            if ($imgTmp !== NULL) {
-                $imgName = $img["name"];
-                $imgCount = explode(".", $imgName);
-                $imgType = $imgCount[count($imgCount) - 1];
-                $imgNewName = md5(date("dmyhis").time()).".".$imgType;
-                $upFile = $upDir.basename($imgNewName);
-                move_uploaded_file($imgTmp, $upFile);
-                $img = $imgNewName;
+
+            foreach ($img["tmp_name"] as $key => $value) {
+                $imgTmp = isset($img["tmp_name"][$key]) ? $img["tmp_name"][$key] : NULL;
+
+                if ($imgTmp !== NULL) {
+                    $imgName = $img["name"][$key];
+                    $imgCount = explode(".", $imgName);
+                    $imgType = $imgCount[count($imgCount) - 1];
+                    $imgNewName = md5(date("dmyhis").time() * $key).".".$imgType;
+                    $upFile = $upDir.basename($imgNewName);
+                    move_uploaded_file($imgTmp, $upFile);
+                    $img["name"][$key] = $imgNewName;
+                }
+
+            }
+
+            $name = "";
+            foreach ($img["name"] as $key => $value) {
+                if ($key == 0) {
+                    $name = $value;                        
+                } else {
+                    $name = $name.",".$value;
+                }
             }
 
             $produtos = new Produtos();
-            $produtos->cadProduto($img, $nome, $preco, $marca, $cateogira);
+            $produtos->cadProduto($name, $nome, $preco, $marca, $cateogira);
             return $res->withRedirect("/admin/produtos");
             exit;
         }
@@ -93,29 +111,46 @@ $app->post("/admin/produto/editproduto", function($req, $res, $args) {
         $marca = isset($_POST["marca"]) ? $_POST["marca"] : NULL;
         $cateogira = isset($_POST["categoria"]) ? $_POST["categoria"] : NULL;
 
+        var_dump($img);
+
         $produtos = new Produtos();
 
-        if ($img["error"] > 0 && $img["size"] <= 0) {
-            $produto = $produtos->listById($id);
-            $img = $produto[0]["img"];
-        }
-
-        if ($img != NULL) {
-            $upDir = $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR."assets".DIRECTORY_SEPARATOR."produtos".DIRECTORY_SEPARATOR;
-            $imgTmp = isset($img["tmp_name"]) ? $img["tmp_name"] : NULL;
-            
-            if ($imgTmp !== NULL) {
-                $imgName = $img["name"];
-                $imgCount = explode(".", $imgName);
-                $imgType = $imgCount[count($imgCount) - 1];
-                $imgNewName = md5(date("dmyhis").time()).".".$imgType;
-                $upFile = $upDir.basename($imgNewName);
-                move_uploaded_file($imgTmp, $upFile);
-                $img = $imgNewName;
+        foreach ($img["name"] as $key => $value) {
+            if ($img["error"][$key] > 0 && $img["size"][$key] <= 0) {
+                $produto = $produtos->listById($id);
+                $name = $produto[0]["img"];
             }
         }
 
-        $produtos->editProduto($id, $img, $nome, $preco, $marca, $cateogira);
+        if ($img["tmp_name"][0] != NULL) {
+            $upDir = $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR."assets".DIRECTORY_SEPARATOR."produtos".DIRECTORY_SEPARATOR;
+
+            foreach ($img["tmp_name"] as $key => $value) {
+                $imgTmp = isset($img["tmp_name"][$key]) ? $img["tmp_name"][$key] : NULL;
+
+                if ($imgTmp !== NULL) {
+                    $imgName = $img["name"][$key];
+                    $imgCount = explode(".", $imgName);
+                    $imgType = $imgCount[count($imgCount) - 1];
+                    $imgNewName = md5(date("dmyhis").time() * $key).".".$imgType;
+                    $upFile = $upDir.basename($imgNewName);
+                    move_uploaded_file($imgTmp, $upFile);
+                    $img["name"][$key] = $imgNewName;
+                }
+
+            }
+
+            $name = "";
+            foreach ($img["name"] as $key => $value) {
+                if ($key == 0) {
+                    $name = $value;                        
+                } else {
+                    $name = $name.",".$value;
+                }
+            }
+        }
+
+        $produtos->editProduto($id, $name, $nome, $preco, $marca, $cateogira);
         return $res->withRedirect("/admin/produtos");
         exit;
     }

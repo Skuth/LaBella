@@ -40,6 +40,25 @@
         gtag('config', 'UA-156753818-1');
     </script>
 
+    <script type="application/ld+json">
+        {
+            "@context" : "http://schema.org",
+            "@type" : "Organization",
+            "name" : "LaBella",
+            "url" : "https://www.labellagabi.com.br/",
+            "sameAs" : [
+            "https://www.facebook.com/lojalabellacf/",
+            ],
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "R. da Assembléia",
+                "addressRegion": "RJ",
+                "postalCode": "28920-000",
+                "addressCountry": "BR"
+            }
+        }
+    </script>
+
     <meta name="theme-color" content="#FC5185">
 
     <link rel="stylesheet" href="assets/css/style.css">
@@ -53,12 +72,12 @@
         <meta property="og:type" content="website">
         <meta property="og:title" content="La Bella - <?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
         <meta property="og:description" content="<?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> na La Bella, venha conferir">
-        <meta property="og:image" content="https://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?>/assets/produtos/<?php echo htmlspecialchars( $produto["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+        <meta property="og:image" content="https://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?>/assets/produtos/<?php echo htmlspecialchars( $produto["img"]["0"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
 
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="La Bella - <?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
         <meta name="twitter:description" content="<?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> na La Bella, venha conferir">
-        <meta name="twitter:image" content="https://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?>/assets/produtos/<?php echo htmlspecialchars( $produto["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+        <meta name="twitter:image" content="https://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?>/assets/produtos/<?php echo htmlspecialchars( $produto["img"]["0"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
     <?php }else{ ?>
         <title>La Bella - Moda feminina | Sandálias, Sapatilhas e muito mais</title>
 

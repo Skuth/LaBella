@@ -9512,6 +9512,7 @@ html {
   width: 100%;
   margin-top: 20px;
   border-radius: 4px;
+  cursor: pointer;
   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);

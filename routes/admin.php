@@ -23,6 +23,11 @@ $app->get("/admin/painel", function($req, $res, $args) {
         $site = new Site();
         $view = $site->listAll();
 
+        foreach ($prods as $key => $value) {
+            $img = explode(",", $value["img"]);
+            $prods[$key]["img"] = $img;
+        }
+
         $page = new PageAdmin();
         $page->setTpl("painel", ["produtos"=>$prods, "visitantes"=>$view]);
     }

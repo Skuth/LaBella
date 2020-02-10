@@ -3,11 +3,13 @@
         <div class="productPictures">
             
             <div class="productSlide">
-                <img src="/assets/produtos/<?php echo htmlspecialchars( $produto["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Imagem do produto - <?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                <?php $counter1=-1;  if( isset($produto["img"]) && ( is_array($produto["img"]) || $produto["img"] instanceof Traversable ) && sizeof($produto["img"]) ) foreach( $produto["img"] as $key1 => $value1 ){ $counter1++; ?>
+                <img src="/assets/produtos/<?php echo htmlspecialchars( $value1, ENT_COMPAT, 'UTF-8', FALSE ); ?>" onclick="setImg(this)" alt="Imagem do produto - <?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> - foto <?php echo htmlspecialchars( $key1 + 1, ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                <?php } ?>
             </div>
             
             <div class="productImg">
-                <img src="/assets/produtos/<?php echo htmlspecialchars( $produto["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Imagem do produto - <?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                <img id="productImg" src="/assets/produtos/<?php echo htmlspecialchars( $produto["img"]["0"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Imagem do produto - <?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
             </div>
             
         </div>
@@ -40,7 +42,7 @@
             <div class="productBox">
                 <a href="/produto/<?php echo name($value1["nome"]); ?>/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                     <div class="boxImg">
-                        <img src="/assets/produtos/<?php echo htmlspecialchars( $value1["img"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Imagem do produto - <?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                        <img src="/assets/produtos/<?php echo htmlspecialchars( $value1["img"]["0"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Imagem do produto - <?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                     </div>
                     <div class="boxInfo">
                         <p class="tag"><?php echo htmlspecialchars( $value1["marca"], ENT_COMPAT, 'UTF-8', FALSE ); ?></p>

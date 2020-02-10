@@ -25,7 +25,7 @@
             <div class="productBox">
                 <a href="/produto/{function="name($value.nome)"}/{$value.id}">
                     <div class="boxImg">
-                        <img src="/assets/produtos/{$value.img}" alt="Imagem do produto - {$value.nome}">
+                        <img src="/assets/produtos/{$value.img[0]}" alt="Imagem do produto - {$value.nome}">
                     </div>
                     <div class="boxInfo">
                         <p class="tag">{$value.marca}</p>

@@ -3,11 +3,13 @@
         <div class="productPictures">
             
             <div class="productSlide">
-                <img src="/assets/produtos/{$produto.img}" alt="Imagem do produto - {$produto.nome}">
+                {loop="$produto.img"}
+                <img src="/assets/produtos/{$value}" onclick="setImg(this)" alt="Imagem do produto - {$produto.nome} - foto {$key + 1}">
+                {/loop}
             </div>
             
             <div class="productImg">
-                <img src="/assets/produtos/{$produto.img}" alt="Imagem do produto - {$produto.nome}">
+                <img id="productImg" src="/assets/produtos/{$produto.img[0]}" alt="Imagem do produto - {$produto.nome}">
             </div>
             
         </div>
@@ -40,7 +42,7 @@
             <div class="productBox">
                 <a href="/produto/{function="name($value.nome)"}/{$value.id}">
                     <div class="boxImg">
-                        <img src="/assets/produtos/{$value.img}" alt="Imagem do produto - {$value.nome}">
+                        <img src="/assets/produtos/{$value.img[0]}" alt="Imagem do produto - {$value.nome}">
                     </div>
                     <div class="boxInfo">
                         <p class="tag">{$value.marca}</p>
