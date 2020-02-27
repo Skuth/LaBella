@@ -19,9 +19,8 @@ $app->get("/admin/painel", function($req, $res, $args) {
     } else {
         $produtos = new Produtos();
         $prods = $produtos->listAll();
-
-        $site = new Site();
-        $view = $site->listAll();
+        
+        $clicks = $produtos->getClicks();
 
         foreach ($prods as $key => $value) {
             $img = explode(",", $value["img"]);
@@ -29,7 +28,7 @@ $app->get("/admin/painel", function($req, $res, $args) {
         }
 
         $page = new PageAdmin();
-        $page->setTpl("painel", ["produtos"=>$prods, "visitantes"=>$view]);
+        $page->setTpl("painel", ["produtos"=>$prods, "clicks"=>$clicks]);
     }
 });
 

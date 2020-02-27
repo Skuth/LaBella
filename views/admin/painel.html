@@ -13,8 +13,8 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">Visitas</h5>
-                    <span class="h2 font-weight-bold mb-0">{function="count($visitantes)"}</span>
+                    <h5 class="card-title text-uppercase text-muted mb-0">Clicks</h5>
+                    <span class="h2 font-weight-bold mb-0">{$clicks}</span>
                   </div>
                   <div class="col-auto">
                     <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -74,7 +74,7 @@
                         <th scope="col" style="text-align: center;">Foto</th>
                         <th scope="col" style="text-align: center;">Nome</th>
                         <th scope="col" style="text-align: center;">Preço</th>
-                        <th scope="col" style="text-align: center;">Visitas</th>
+                        <th scope="col" style="text-align: center;">Clicks</th>
                         <th scope="col" style="text-align: center;">Ações</th>
                     </tr>
                 </thead>
@@ -85,7 +85,7 @@
                         <td style="text-align: center;"><img src="/assets/produtos/{$value.img[0]}" width="40" alt="foto do produto {$value.nome}"></td>
                         <th scope="row" style="text-align: center;">{$value.nome}</th>
                         <td style="text-align: center;">{$value.valor}</td>
-                        <td style="text-align: center;">{$value.visitas}</td>
+                        <td style="text-align: center;">{$value.clicks}</td>
                         <td style="text-align: center;">
                             <a href="/admin/produto/editar/{$value.id}" class="btn btn-icon btn-md btn-2 btn-primary">
                                 <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>

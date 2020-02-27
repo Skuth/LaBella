@@ -89,4 +89,12 @@ $app->get("/produtos[/{tipo}[/{marca}]]", function($req, $res, $args) {
     
 });
 
+$app->post("/produto/{id}/comprar", function($req, $res, $args) {
+
+    $id = $args["id"];
+    $produto = new Produtos();
+    $r = $produto->addClick($id);
+
+});
+
 ?>

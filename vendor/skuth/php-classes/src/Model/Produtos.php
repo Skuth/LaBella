@@ -78,8 +78,39 @@ class Produtos extends Model {
         $params = [":id"=>$id, ":nome"=>$nome, ":valor"=>$preco, ":marca"=>$marca, ":tipo"=>$categoria, ":img"=>$img];
         $res = $sql->query($query, $params);
     }
-    
 
+    public function addClick($id) {
+        $sql = new Sql();
+
+        $q = "SELECT clicks FROM produtos WHERE id=:id";
+        $p = [":id"=>$id];
+        $r = $sql->select($q, $p);
+
+        $clicks = $r[0]["clicks"];
+        $clicks += 1;
+
+        $query = "UPDATE produtos set clicks=:clicks WHERE id=:id";
+        $params = [
+            ":id"=>$id,
+            ":clicks"=>$clicks
+        ];
+
+        return $sql->query($query, $params);
+    }
+
+    public function getClicks() {
+        $sql = new Sql();
+        $q = "SELECT clicks from produtos";
+        $r = $sql->select($q);
+        $clicks = 0;
+
+        for ($i=0; $i < count($r); $i++) { 
+            $clicks += $r[$i]["clicks"];
+        }
+
+        return $clicks;
+    }
+    
 }
 
 ?>

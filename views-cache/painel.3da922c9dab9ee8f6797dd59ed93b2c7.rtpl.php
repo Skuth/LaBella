@@ -13,8 +13,8 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">Visitas</h5>
-                    <span class="h2 font-weight-bold mb-0"><?php echo count($visitantes); ?></span>
+                    <h5 class="card-title text-uppercase text-muted mb-0">Clicks</h5>
+                    <span class="h2 font-weight-bold mb-0"><?php echo htmlspecialchars( $clicks, ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                   </div>
                   <div class="col-auto">
                     <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -74,7 +74,7 @@
                         <th scope="col" style="text-align: center;">Foto</th>
                         <th scope="col" style="text-align: center;">Nome</th>
                         <th scope="col" style="text-align: center;">Preço</th>
-                        <th scope="col" style="text-align: center;">Visitas</th>
+                        <th scope="col" style="text-align: center;">Clicks</th>
                         <th scope="col" style="text-align: center;">Ações</th>
                     </tr>
                 </thead>
@@ -85,7 +85,7 @@
                         <td style="text-align: center;"><img src="/assets/produtos/<?php echo htmlspecialchars( $value1["img"]["0"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" width="40" alt="foto do produto <?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"></td>
                         <th scope="row" style="text-align: center;"><?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?></th>
                         <td style="text-align: center;"><?php echo htmlspecialchars( $value1["valor"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                        <td style="text-align: center;"><?php echo htmlspecialchars( $value1["visitas"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                        <td style="text-align: center;"><?php echo htmlspecialchars( $value1["clicks"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                         <td style="text-align: center;">
                             <a href="/admin/produto/editar/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-icon btn-md btn-2 btn-primary">
                                 <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>

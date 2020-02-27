@@ -52,3 +52,11 @@ function setImg(box) {
     
     $(imgBox).attr("src", src)
 }
+
+function buyProduct(id) {
+    $.ajax({
+        type: "POST",
+        url: `${window.location.origin}/produto/${id}/comprar`,
+        success: function (r) {}
+    });
+}
