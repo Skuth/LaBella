@@ -9430,7 +9430,7 @@ html {
 .productsList .filters > li {
   cursor: pointer;
   display: block;
-  padding: 20px 30px;
+  padding: 20px 50px;
   border-radius: 4px;
   position: relative;
   -webkit-user-select: none;
