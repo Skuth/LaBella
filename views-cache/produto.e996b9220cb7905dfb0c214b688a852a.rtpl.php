@@ -1,4 +1,7 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><section class="productsList">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v6.0"></script>
+
+<section class="productsList">
     <div class="productInfo">
         <div class="productPictures">
             
@@ -30,6 +33,10 @@
 
             <div class="button">
                 <a onclick="buyProduct(<?php echo htmlspecialchars( $produto["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>)" href="https://api.whatsapp.com/send?phone=5522996014887&text=Estava no site e me interessei pelo produto '<?php echo htmlspecialchars( $produto["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>' - <?php echo htmlspecialchars( $url, ENT_COMPAT, 'UTF-8', FALSE ); ?>" target="_blank">Comprar</a>
+            </div>
+
+            <div class="price">
+                <div class="fb-share-button price" data-href="https://<?php echo htmlspecialchars( $_SERVER['SERVER_NAME'], ENT_COMPAT, 'UTF-8', FALSE ); ?><?php echo htmlspecialchars( $_SERVER['REQUEST_URI'], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Finvalid.invalid%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a></div>
             </div>
             
         </div>

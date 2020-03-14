@@ -1,3 +1,6 @@
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v6.0"></script>
+
 <section class="productsList">
     <div class="productInfo">
         <div class="productPictures">
@@ -30,6 +33,10 @@
 
             <div class="button">
                 <a onclick="buyProduct({$produto.id})" href="https://api.whatsapp.com/send?phone=5522996014887&text=Estava no site e me interessei pelo produto '{$produto.nome}' - {$url}" target="_blank">Comprar</a>
+            </div>
+
+            <div class="price">
+                <div class="fb-share-button price" data-href="https://{$_SERVER['SERVER_NAME']}{$_SERVER['REQUEST_URI']}" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Finvalid.invalid%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a></div>
             </div>
             
         </div>
