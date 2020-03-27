@@ -34,5 +34,6 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^ index.php [QSA,L]
+    RewriteCond %{HTTP_HOST} !^www.labellagabi.com.br$ [NC]
+    RewriteRule ^(.*)$ https://www.labellagabi.com.br/$1 [L,R=301]
 </IfModule>
-
