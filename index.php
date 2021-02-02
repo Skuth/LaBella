@@ -7,7 +7,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 require 'vendor/autoload.php';
 
-$config['displayErrorDetails'] = true;
+$config['displayErrorDetails'] = false;
 
 $app = new \Slim\App(['settings' => $config]);
 

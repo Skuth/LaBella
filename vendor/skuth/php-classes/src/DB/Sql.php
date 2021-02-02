@@ -4,9 +4,9 @@ namespace Skuth\DB;
 
 class Sql {
 
-    const HOST = "localhost";
-    const DB = "la_bella";
-    const USER = "root";
+    const HOST = "";
+    const DB = "";
+    const USER = "";
     const PASS = "";
     
     private $conn;
