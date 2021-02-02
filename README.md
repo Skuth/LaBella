@@ -37,7 +37,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   ```
   $ composer install
   ```
-- Crie e configure o arquivo [Config.php](./vendor/skuth/php-classes/src/DB/Sql.php)
+- Configure o arquivo [Sql.php](./vendor/skuth/php-classes/src/DB/Sql.php)
 - Acesse sua **Virtual Host**
 
 ## 📝 Licença
