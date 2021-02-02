@@ -28,7 +28,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - Clonar este respositório:
   ```
-  $ git clone https://github.com/Skuth/2M-Atacado
+  $ git clone https://github.com/Skuth/LaBella
   ```
 - Instale o [WampServer](https://www.wampserver.com/en/) ou algum servidor Apache com PHP >= 7.2
 - Configure uma **Virtual Host** para o site
